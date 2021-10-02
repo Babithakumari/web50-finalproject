@@ -1,0 +1,314 @@
+body{
+    margin:0;
+    padding:0;
+    background-image: url('scattered-forcefields.svg');
+    color:#1B2021;
+    font-family: 'Ubuntu', sans-serif;
+    
+
+}
+
+/*------------------------------------------*/
+ 
+/* general elements*/
+p{
+    margin:0 0;
+}
+
+li{
+    display:inline-block;
+    margin:10px;
+}
+input{
+    width:50%; 
+    background-color:white;
+    outline:none;
+    border:1px solid #C9CCD5;
+    display:inline-block;
+    
+}
+button{
+    border:none;
+}
+
+
+a{
+    text-decoration:none;
+    display:inline-block;
+    color:grey
+}
+a:hover{
+    color:black;
+}
+/* ----------------------------------------------------*/
+
+/*Login/register*/
+.login{
+    background-color:white;
+    box-shadow:0 4px 8px 0 rgba(0,0,0,0.4);
+    width:30%;
+    color:black;
+    padding:6px;
+    margin:50px auto;
+}
+
+#login-header,#login-details{
+    
+    max-width:100%;
+    margin:auto;
+    align-items:center;
+    text-align:center;
+    line-height:2;
+    
+    
+}
+#login-header-text{
+    font-weight:200;
+    margin:auto;
+    color:#444941;
+
+}
+
+.login-details-div{
+    margin:15px;
+}
+.login-details-div-text{
+    font-weight:200;
+    color:#444941
+}
+.login-details-form-input{
+    padding:1.5em;
+}
+#login-details-form-btn{
+    margin:2em 0;
+    background-color:#00FFFF;
+    color:grey;
+    font-weight:600;
+
+}
+#login-details-form-btn:hover{
+    background-color:#11eeee;
+
+}
+
+
+/*-----------------------------------------------------------------------*/
+
+/* index-page */
+
+/* Component-1 nav */
+#nav-bar{
+    background-color:#00ffff;
+    padding:15px;
+    margin:0;
+}
+#nav-brand{
+    font-weight:500;
+    color:#444941;
+    color:#9D9D9D;
+    color:grey;
+    margin:0;
+    padding:0;
+    font-family: 'Ubuntu', sans-serif;
+    font-size:25px;
+}
+.nav-text{
+    color:grey;
+    font-size:18px;
+
+}
+.nav-btn{
+    color:black;
+
+
+}
+#avatar{
+    position:absolute;
+    right: 15px;
+ }
+
+
+
+
+/*Component-2 Index */
+ #index-section{
+    width:60%;
+    margin:2rem auto;
+    box-shadow:0 4px 8px 0 rgba(0,0,0,0.4);
+
+    
+}
+#search-section{
+  max-width:100%;
+  padding:10px;
+  margin:0 auto;
+  background-color:grey;
+}
+
+
+ #search-bar{
+    display:inline-block;
+    color:black;
+    border: 1px solid black;
+    border-radius: 10px;
+    width:85%;
+    padding:10px;
+  
+    
+    
+}
+#search-button{
+    display:inline-block;
+    background-color:#00FFFF;
+    border:1px solid black;
+    border-radius:8px;
+    padding:8px;
+
+    
+}
+
+
+ 
+.contact-list{
+    background-color:white;
+    color:#1B2021;
+    padding:15px;
+    margin:0;
+    border-bottom:0.5px solid black;
+    
+}
+.contact-list:hover{
+    background-color:#C9CCD5;
+}
+
+/*------------------------------------------------------*/
+
+
+
+/*chatroom */
+
+
+.fa-user{
+    color:grey;
+    padding:6px;
+}
+
+#profile2{
+    background-color:grey;
+    max-width:100%;
+    padding:12px;
+    color:white;
+}
+#avatar2{
+    color:white;
+}
+#chat-room{
+    
+    margin:2em auto 2em;
+    width:50%;
+    box-shadow:0 4px 8px 0 rgba(0,0,0,0.4);
+    background-color:white;
+
+    
+}
+#prev-msgs{
+    padding:15px;
+}
+.prev-msgs-user1, .prev-msgs-user2{
+color:grey;
+margin:10px;
+}
+
+.time{
+    font-size:12px;
+    color:#C8C6C6;
+    
+}
+
+.msg-text{
+    margin-left:26px;
+    color:grey;
+    font-family:sans-serif;
+}
+
+#compose-text-section{
+    display:grid;
+    background-color: yellow;
+   
+}
+#send-section{
+    display:flex;
+    align-items:center;
+    width:50%;
+    margin:auto;
+    background-color: grey;
+
+    
+}
+#message-input{
+    padding:5px;
+    height: 30px;
+    width:90%;
+    margin:5px;
+    border:1px solid grey;
+    border-radius:6px;
+    text-align:center;
+}
+
+#send-btn{
+    height:40px;
+    padding:5px;
+    width:50px;
+    margin:5px;
+    border:1px solid grey;
+    border-radius:6px;
+    background-color:#00ffff
+}
+
+#sent_by{
+    display:inline-block
+}
+
+
+/*mobile responsiveness */
+@media only screen and (max-width: 1000px) {
+
+    #search-bar{
+        width:82%;
+    }
+
+
+}
+@media only screen and (max-width: 400px) {
+    
+    .login{
+        width:75%
+    }
+
+    #index-section{
+        width:100%;
+        margin:0;
+        box-shadow:none;
+    }
+    #search-section
+    {
+        max-width:100%;
+    }
+    
+    #search-bar{
+        width:80%;
+    }
+
+    #chat-room{
+        width:100%;
+        margin:0 auto;
+    }
+    .contact-list{
+        background-color:white;
+          color:black;
+      }
+
+      #send-section{
+          width:100%;
+      }
+  }

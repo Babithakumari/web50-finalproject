@@ -1,0 +1,63 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Let's Chat</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="{% static 'chat/favicon.ico' %}" type="image/x-icon">
+        <link rel="icon" href="{% static 'chat/favicon.ico' %}" type="image/x-icon">
+        <link href = "{% static 'chat/styles.css' %}" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&display=swap" rel="stylesheet"> 
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    </head>
+
+
+    <body>
+        <nav>
+            <div id = "nav-bar" >
+                <li id = "nav-brand">
+                     Let's Chat <i class="fas fa-comment"></i>
+                </li>
+                {% if request.user.is_authenticated %}
+
+                <li class = "nav-btn">
+                    <a class="nav-text"  href = "{% url 'index' %}">All Chats</a>
+    
+                </li>
+               
+               
+                <li class = "nav-btn">
+                    <a class="nav-text" href = "{% url 'logout_view'%}">Logout</a>
+    
+                </li>
+
+
+               
+               
+                <li class = "nav-btn">
+                        <a class="nav-text" id = "avatar" href = "#">
+                            <i class="fas fa-user"></i> {{user.get_username}}
+                           
+                        </a>
+                </li>
+                {% endif %}
+              
+            </div>
+           
+        </nav>
+
+
+        <div class="body">
+            {% block body %} {% endblock %}
+
+        </div>
+
+       
+        
+
+    </body>
+</html>
