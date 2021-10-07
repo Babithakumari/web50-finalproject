@@ -17,38 +17,49 @@
 
 
     <body>
-        <nav>
-            <div id = "nav-bar" >
-                <li id = "nav-brand">
-                     Let's Chat <i class="fas fa-comment"></i>
-                </li>
+        <header class="header">
+
+            <nav class="navbar">
+
+                <a id = "nav-brand">
+                    Let's Chat <i class="fas fa-comment"></i>
+                </a>
+   
+
+            <ul class="nav-menu">
                 {% if request.user.is_authenticated %}
 
-                <li class = "nav-btn">
-                    <a class="nav-text"  href = "{% url 'index' %}">All Chats</a>
+                <li class = "nav-item">
+                    <a  href = "{% url 'index' %}" class="nav-link">All Chats</a>
     
                 </li>
                
                
-                <li class = "nav-btn">
-                    <a class="nav-text" href = "{% url 'logout_view'%}">Logout</a>
-    
+                <li class = "nav-item" id="logout">
+                    <a href = "{% url 'logout_view'%}" class="nav-link" >Logout</a>
                 </li>
 
 
-               
-               
-                <li class = "nav-btn">
-                        <a class="nav-text" id = "avatar" href = "#">
-                            <i class="fas fa-user"></i> {{user.get_username}}
+               <li class = "nav-item">
+                    <a href = "#" class="nav-link" id = "avatar" >
+                    <i class="fas fa-user"></i> {{user.get_username}}
                            
                         </a>
                 </li>
+
+            </ul>
                 {% endif %}
-              
+            <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
             </div>
+
+           
+               
            
         </nav>
+    </header>
 
 
         <div class="body">
@@ -58,6 +69,7 @@
 
        
         
+        <script src = "{% static 'chat/nav.js' %}"></script>
 
     </body>
 </html>

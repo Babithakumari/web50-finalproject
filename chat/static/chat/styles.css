@@ -1,5 +1,6 @@
 body{
     margin:0;
+    margin-bottom:50px;
     padding:0;
     background-image: url('scattered-forcefields.svg');
     color:#1B2021;
@@ -8,16 +9,20 @@ body{
 
 }
 
-/*------------------------------------------*/
+
+/*--------------------------------------*/
  
 /* general elements*/
 p{
     margin:0 0;
 }
+ul{
+    list-style-type: none;
+}
 
 li{
-    display:inline-block;
     margin:10px;
+    list-style:none;
 }
 input{
     width:50%; 
@@ -97,36 +102,66 @@ a:hover{
 /* index-page */
 
 /* Component-1 nav */
-#nav-bar{
-    background-color:#00ffff;
-    padding:15px;
-    margin:0;
+
+
+.header{
+    border-bottom: 1px solid #E2E8F0;
 }
+
+.navbar 
+{
+    background-color:#00ffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.5rem;
+ }
+
+
 #nav-brand{
     font-weight:500;
-    color:#444941;
-    color:#9D9D9D;
     color:grey;
-    margin:0;
-    padding:0;
-    font-family: 'Ubuntu', sans-serif;
     font-size:25px;
 }
-.nav-text{
+.nav-menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+.nav-item {
+    margin-left: 5rem;
+}
+
+.nav-link{
     color:grey;
     font-size:18px;
+    font-weight: 400;
 
+}
+.nav-link:hover{
+    color: #482ff7;
 }
 .nav-btn{
     color:black;
 
 
 }
-#avatar{
-    position:absolute;
-    right: 15px;
- }
 
+
+ .hamburger {
+    display: none;
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: #101010;
+}
 
 
 
@@ -211,10 +246,12 @@ a:hover{
 
     
 }
-#prev-msgs{
+#all-msgs{
     padding:15px;
+    height:380px;
+    overflow-y: scroll;
 }
-.prev-msgs-user1, .prev-msgs-user2{
+.prev-msgs{
 color:grey;
 margin:10px;
 }
@@ -233,7 +270,12 @@ margin:10px;
 
 #compose-text-section{
     display:grid;
-    background-color: yellow;
+    position: fixed;
+    height: 50px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    margin-bottom: 0px;    
    
 }
 #send-section{
@@ -271,19 +313,53 @@ margin:10px;
 
 
 /*mobile responsiveness */
-@media only screen and (max-width: 1000px) {
 
-    #search-bar{
-        width:82%;
-    }
+@media only screen and (max-width: 768px) {
 
-
-}
-@media only screen and (max-width: 400px) {
     
-    .login{
-        width:75%
+    
+    .nav-menu {
+        position:fixed;
+        left:-100%;
+        top:3.8rem;
+        flex-direction: column;
+        width: 90.5%;
+        height:100%;
+        justify-content: unset;
+        border-radius: 6px;
+        text-align: center;
+        transition: 0.3s;
+        background-color:white;
+        box-shadow:
+            0 10px 27px rgba(0, 0, 0, 0.05);
+        margin:auto
     }
+    .nav-menu.active {
+        left: 0;
+    }
+    .nav-item {
+        margin: 2.5rem 0;
+    }
+    .nav-link:hover{
+        color: #482ff7;
+    }
+    
+    .hamburger{
+        display:block;
+        cursor:pointer;
+    }
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
 
     #index-section{
         width:100%;
@@ -298,6 +374,7 @@ margin:10px;
     #search-bar{
         width:80%;
     }
+    
 
     #chat-room{
         width:100%;
@@ -311,4 +388,27 @@ margin:10px;
       #send-section{
           width:100%;
       }
-  }
+      #chat-room{
+          width:100%;
+          box-shadow:none;
+
+      }
+      #all-msgs{
+          max-height: 500px;
+      }
+      #compose-text-section{
+        position: fixed;
+        height: 50px;
+        bottom: 0px;
+        left: 0px;
+        right: 0px;
+        margin-bottom: 0px;
+      }
+      .login{
+          width:100%;
+          box-shadow:0 4px 8px 0 rgba(0,0,0,0.1);
+          margin:0 auto;
+          
+
+      }
+    }

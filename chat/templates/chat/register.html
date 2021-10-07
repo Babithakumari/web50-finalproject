@@ -10,31 +10,28 @@
 <div class = "login">
 
     <div id="login-header">
-       <h1 id="login-text">Register</h1>
+       <h1 id="login-header-text">Register</h1>
     </div>
     
     <div id = "login-details">
         <form id="login-form" method="POST" action = "{% url 'register'%}">
             {% csrf_token %}
-            <br>
+            <div class="login-details-div">
+                <p class="login-details-text">Username</p>
+                <input type="text" name="username" class="login-details-form-input">
+            </div>
+    
+            <div class="login-details-div">
+                <p class="login-details-text">Password</p>
+                <input type= "password"  name="password"  class="login-details-form-input">
+            </div>
 
-            <p>Username</p>
-            <input type="text" name="username" class="login-input">
-
-            <br>
-
-            <p>Password</p>
-            <input type= "password"  name="password"  class="login-input">
-
-            <br>
-            
-            <p>Confirm Password</p>
-            <input type= "password"  name="password"  class="login-input">
-
-            <br>
-
-            <input type = "submit" value="Register"  class="login-input" id="login-btn">
-
+            <div class="login-details-div">
+                <p class="login-details-text"> Confirm Password</p>
+                <input type= "password"  name="password"  class="login-details-form-input">
+            </div>
+                
+            <input type = "submit" value="Register"  class="login-details-form-input" id="login-details-form-btn" >
             <br>
         </form>
     </div>

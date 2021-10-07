@@ -1,5 +1,16 @@
 document.addEventListener('DOMContentLoaded',function(){
 
+    //navbar
+    const navLink = document.querySelectorAll(".nav-link");
+
+    navLink.forEach(n => n.addEventListener("click", closeMenu));
+
+    function closeMenu() {
+         hamburger.classList.remove("active");
+         navMenu.classList.remove("active");
+        }
+
+
     // To enable search bar
     searchBtn = document.querySelector("#search-button")
     if(searchBtn){

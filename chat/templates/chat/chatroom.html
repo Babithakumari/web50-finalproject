@@ -15,32 +15,21 @@
     </div> 
     
     
-    <div id = "prev-msgs">
+    <div id = "all-msgs">
             {% for message in previous_msg %}
-            {% if message.user.username == user.get_username %}
 
-            <div class = "prev-msgs-user1"> 
+            <div class = "prev-msgs"> 
                 <i class="fas fa-user"></i>
                 <b>{{message.user}}</b>
                 <span class="time">{{ message.timestamp.time}}</span>
                 <p class="msg-text">{{message.message}}</p>
             </div>
 
-            {% else %}
-            <div class = "prev-msgs-user2"> 
-                <i class="fas fa-user"></i>
-                <b>{{message.user}}</b>
-                <span class="time">{{ message.timestamp.time}}</span>
-                <p class="msg-text">{{message.message}}</p>  
-            </div>          
-                
-            {% endif %}
+           {% endfor %}
     
-            {% endfor %}
-    
-            <div id = "msg-box">
-            <div id = "messages"></div>
-            </div>
+        
+
+            
     
        
     

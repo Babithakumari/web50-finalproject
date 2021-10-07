@@ -24,7 +24,6 @@ socket.onopen=async function(e){
    const message = messageInput.value;
    const sentBy = document.querySelector("#sent_by").value
    const roomId = document.querySelector("#room_id").value
-   alert("Sending message to consumer!!!!")
    
    
     if(message){
@@ -36,7 +35,6 @@ socket.onopen=async function(e){
         }))
 
     }
-    alert("emptied message")
 
     message = ''
     
@@ -49,17 +47,12 @@ socket.onopen=async function(e){
 
 // Handle messages from SERVER and display on FRONTEND
 socket.onmessage=async function(e){
-    console.log("socket received message")
-    alert("socket received a message")
+    console.log('message',e)
 
 let data = JSON.parse(e.data)
 
 if (data.message){
-    alert("data msg")
-    console.log("data and")
-    document.querySelector("#messages").innerHTML += ('<b>'+ data.sent_by + '</b>:'+data.message +'</br>');
-    alert("added new message")
-    window.reload()
+    location.reload()
 }
 
 
@@ -75,8 +68,9 @@ socket.onerror=async function(e){
 
 
 function scrollToBottom(){
-    let objDiv = document.querySelector("#prev-msgs")
+    let objDiv = document.querySelector("#all-msgs")
     objDiv.scrollTop = objDiv.scrollHeight;
     console.log(objDiv.scrollHeight)
     console.log("scrolled")
 }
+scrollToBottom()
